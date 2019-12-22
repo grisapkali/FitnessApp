@@ -1,27 +1,28 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, ScrollView,KeyboardAvoidingView} from 'react-native';
+import LoginForm from './LoginForm';
 
 export default class Login extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.headBackground} />
-        <View>
-          <Text style ={styles.logo}>TAHRİBAT</Text>
-          <Text style ={styles.logoDescription}>Antrenman & Beslenme</Text>
-        </View>
-        <ScrollView>
-          <View style={styles.loginArea}>
-          <Text>Deneme</Text>
-          <Text>Deneme</Text>
-          <Text>Deneme</Text>
-          <Text>Deneme</Text>
-          <Text>Deneme</Text>
-          <Text>Deneme</Text>
+		<View style={styles.container}>
+		<View style={styles.headBackground} />
+		<KeyboardAvoidingView behavior={"position"}>
+		<View>
+			<Text style={styles.logo}>TAHRİBAT</Text>
+			<Text style={styles.logoDescription}>Antrenman & Beslenme Sistemleri</Text>
+		</View>
+		<ScrollView>
+			<View style={styles.loginArea}>
+					<Text style={styles.loginAreaDescription}>
+					Uygulamayı kullanabilmeniz için giriş yapmanız gerekmektedir.
+				</Text>
 
-          </View>
-        </ScrollView>
-      </View>
+				<LoginForm />
+			</View>
+		</ScrollView>
+		</KeyboardAvoidingView>
+	</View>
     );
   }
 }
